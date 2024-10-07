@@ -1,0 +1,23 @@
+# Ignore Visual Studio temporary files, build results, and
+# user-specific files
+.vscode/
+.vs/
+*.user
+*.suo
+
+# ASP.NET Core
+bin/
+obj/
+out/
+publish/
+
+# LibMan
+wwwroot/lib/
+
+# Node.js
+node_modules/
+
+# Environment and secrets
+appsettings.json
+secrets.json
+/Properties/launchSettings.json
