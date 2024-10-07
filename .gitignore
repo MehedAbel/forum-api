@@ -18,6 +18,6 @@ wwwroot/lib/
 node_modules/
 
 # Environment and secrets
-appsettings.json
+appsettings.Development.json
 secrets.json
 /Properties/launchSettings.json
