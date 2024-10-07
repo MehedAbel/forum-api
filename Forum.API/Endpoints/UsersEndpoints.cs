@@ -1,6 +1,7 @@
 using System;
 using Forum.API.DTOs;
 using Forum.API.Mapping;
+using Microsoft.EntityFrameworkCore;
 
 namespace Forum.API.Endpoints;
 
@@ -12,9 +13,9 @@ public static class UsersEndpoints
         var group = app.MapGroup("/users");
 
         // GET /users
-        group.MapGet("/", (ApplicationDbContext dbContext) => {
-            var users = dbContext.Users.Select(x => x.ToUserDTO()).ToList();
-            return users;
+        group.MapGet("/", async (ApplicationDbContext dbContext) => {
+            var users = await dbContext.Users.Select(x => x.ToUserDTO()).ToListAsync();
+            return Results.Ok(users);
         });
 
         // GET /users/{id}
