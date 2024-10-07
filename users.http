@@ -2,3 +2,22 @@ GET http://localhost:5154/users
 
 ###
 GET http://localhost:5154/users/16
+
+###
+POST http://localhost:5154/users/register
+Content-Type: application/json
+
+{
+    "username": "somedayy",
+    "email": "somo@mail.com",
+    "password": "gigelpass"
+}
+
+###
+POST http://localhost:5154/users/login
+Content-Type: application/json
+
+{
+    "username": "somedayy",
+    "password": "gigelpass"
+}
