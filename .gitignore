@@ -6,18 +6,12 @@
 *.suo
 
 # ASP.NET Core
-bin/
-obj/
-out/
-publish/
-
-# LibMan
-wwwroot/lib/
-
-# Node.js
-node_modules/
+Forum.API/bin/
+Forum.API/obj/
+Forum.API/out/
+Forum.API/publish/
 
 # Environment and secrets
-appsettings.Development.json
-secrets.json
-/Properties/launchSettings.json
+Forum.API/appsettings.Development.json
+Forum.API/secrets.json
+Forum.API/Properties/launchSettings.json
