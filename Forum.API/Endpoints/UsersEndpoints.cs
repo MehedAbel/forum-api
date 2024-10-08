@@ -26,21 +26,21 @@ public static class UsersEndpoints
         })
         .WithName(getUserEndpointName);
 
-        // POST /users/register
-        group.MapPost("/register", (RegisterUserDTO registerUserDTO, ApplicationDbContext dbContext) => {
-            User user = registerUserDTO.ToEntity();
-            dbContext.Users.Add(user);
-            dbContext.SaveChanges();
+        // // POST /users/register
+        // group.MapPost("/register", (RegisterUserDTO registerUserDTO, ApplicationDbContext dbContext) => {
+        //     User user = registerUserDTO.ToEntity();
+        //     dbContext.Users.Add(user);
+        //     dbContext.SaveChanges();
             
-            return Results.CreatedAtRoute(getUserEndpointName, new { id = user.Id }, user.ToUserDetailsDTO());
-        });
+        //     return Results.CreatedAtRoute(getUserEndpointName, new { id = user.Id }, user.ToUserDetailsDTO());
+        // });
 
-        // POST /users/login
-        group.MapPost("/login", (LoginUserDTO loginUserDTO, ApplicationDbContext dbContext) => {
-            User? user = dbContext.Users.FirstOrDefault(x => x.Username == loginUserDTO.Username && x.Password == loginUserDTO.Password);
+        // // POST /users/login
+        // group.MapPost("/login", (LoginUserDTO loginUserDTO, ApplicationDbContext dbContext) => {
+        //     User? user = dbContext.Users.FirstOrDefault(x => x.Username == loginUserDTO.Username && x.Password == loginUserDTO.Password);
 
-            return user is null ? Results.NotFound() : Results.Ok(user.ToUserDetailsDTO());
-        });
+        //     return user is null ? Results.NotFound() : Results.Ok(user.ToUserDetailsDTO());
+        // });
         
 
         return group;   

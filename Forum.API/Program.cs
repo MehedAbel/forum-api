@@ -29,6 +29,7 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.MapGet("/", () => "Hello World!");
+app.MapAuthEndpoints();
 app.MapUsersEndpoints();
 
 app.Run();
